@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Wine club</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+	/* colors */
+    :root{ 
+        --wine: #872535; 
+        --blue: #2B2A4C; 
+        --yellow: #FEC260; 
+        --gray: #e9e9e9; 
+        --graydark: #616161;
+    }
+
+    /* General settings */
+	body{margin:0; font-family: helvetica; font-size: 15px;}
+	div{ box-sizing: border-box; /*border: 1px solid #999;*/}
+	h1{ color: var(--wine); margin: 0;}
+	.small{ font-size: .8em;}
+
+    /* Menú */
+	.nav{
+		display: grid;
+		grid-template-columns: repeat(6 , auto);
+		text-align: center;
+		background-color: var(--blue); 		
+		color: var(--gray); 
+	}
+	.nav div{ text-align: center; padding: 5% 0%; display: block; }
+    .nav div a{ width:100%; }
+    .nav .prueba{ margin-left: 2em; }
+    .prueba{ 
+        height: 3px; 
+        transform: translate(-50%, -50%);
+        transition:0.5s; 
+        translate(-50%,-50); width:50px;
+    }
+    .prueba:before,
+    .prueba:after,
+    .prueba div {
+    text-align: center;
+    background: #fff;
+    content: "";
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    margin: 7px 0;
+    transition: 0.5s;
+    }
+    .prueba:hover:before {
+    transform: translateY(12px) rotate(135deg);
+    }
+    .prueba:hover:after {
+    transform: translateY(-12px) rotate(-135deg);
+    }
+    .prueba:hover div {
+    transform: scale(0);
+    }
+    /* Listas */
+
+	.nav div a { text-decoration: none;  font-size: 100%; padding: 1rem; }
+	a:link{ color: var(--gray); }
+	a:visited{ color: var(--gray) ; }
+	a:hover{ background-color: var(--gray); color: var(--blue);  }
+	a:active{ color: var(--gray); }	
+    /* Contenido */
+	.content{ 
+		display: grid; 
+		grid-template-columns: repeat(6, auto);
+		padding: 5%;
+		width: 100%;		
+	}
+	.content-expand{ grid-column: 1 / 7; }
+	.content-half1{ margin: 10px; grid-column: 1/ 4;}
+	.content-half2{ margin: 10px; grid-column: 5/ 8;}
+	.content-half1, .content-half2{ border: 2px solid var(--gray); border-radius: 15px; padding: 2em;}
+	.bottom{ 
+		display: grid;
+		grid-template-columns: repeat(4,auto);
+		padding: 0 5% 0 5%;
+		background-color: #9EB8D9;			
+		color: #fff;
+		border-top: 1px solid #999;
+        font-size: .8em;
+        padding: 2em 0 0 2em;
+	}
+	.bottom-expand{
+		grid-column: 1 / 5;
+        text-align: center;
+        padding: 2em;
+	}	
+	.advertise{
+		grid-column: 1 / 7;
+		background-color: var(--yellow);
+		color: white;
+        padding: 2em;
+	}
+
+/* Media queries */
+    @media screen and (max-width: 800px){
+        *{font-size:1.2em; box-sizing: border-box; }
+        .content{ 
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 5%;
+            width: 100%;		
+        }
+        .content-expand, .content-half1 , .content-half2, .bottom, .bottom-expand{ 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            grid-column: 1/2;
+        }
+        .nav div:not(:first-child){ display:none; }
+        .nav .responsive div a{
+            display: block;
+            padding:  0 ;
+        } 
+        .nav .responsive div:not(:first-child) { padding:15px;}
+        .nav .responsive div a{ margin:0; padding:0; background-color:red; }
+        a{  display:inline-block;}
+        a:hover{ background-color: var(--gray); }
+     }
+	</style>
+</head> 
+<body>
+	<div class="nav" id="nav">
+
+        <div class="prueba" href="javascript:void(0);" onmouseover="myFunction()"><div></div></div>
+		<div><a href="#">Menu 1</a></div>
+		<div><a href="#">Menu 2</a></div>
+		<div><a href="#menu2">Price</a></div>	
+		<div><a href="#menu3">What includes</a></div>	
+	</div>
+	<div class="content">
+
+		<div class="content-expand">
+            <div>
+                <h1>Vinaio Wine Club</h1>
+                <p>Welcome to our wine club</p>
+            </div>
+			<div>
+				<p>Our price model </p>
+			</div>
+		</div>
+		
+		<div class="content-half1">
+			<center>
+				<h2>Price 1</h2>
+			</center>			
+		</div>
+		
+		<div class="content-half2">
+			<center>
+				<h2>Price 2</h2>
+				Includes:
+			</center>
+				<ul>
+					<li>4 Bottles</li>
+					<li>4 Bottles</li>
+					<li>3 comidas</li>
+					<li>3 comidas</li>
+				</ul>
+		</div>
+		
+		<div class="content-half1">
+			<center>
+				<h2>Price 2</h2>
+				Includes:
+				<ul>
+					<li>4 Bottles</li>
+					<li>3 comidas</li>
+				</ul>
+			</center>
+		</div>
+	</div>
+	
+	<div class="advertise">
+		<p>problemas</p>
+	</div>
+
+    <div class="content-expand">
+        <p>Our stores</p>
+    </div>
+	
+	<div class="bottom">
+        <div>
+            <b>
+                Pricing
+            </b>
+            <p>
+                Plan <br>
+                Plan 2
+            </p>
+        </div>
+        <div>
+            <b>Disclaimer</b>
+        </div>
+        <div>
+            <b>Legal</b>
+        </div>
+        <div class="bottom-expand">
+            <p class="small">Vinaio Imports, Ltd. ©️ 2014</p>
+        </div>
+    </div>	
+<script>
+function myFunction() {
+  var x = document.getElementById("nav");
+  if (x.className === "nav") {
+    x.className += " responsive";
+  } else {
+    x.className = "nav";
+  }
+}
+</script>
+</body>
+</html>
