@@ -5,11 +5,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>test nav</title>
 	<style>
-		*{ margin: 0; font-size: 20px;}
+		*{ margin: 0; font-size: 18px;}
 		@font-face{ font-family: Quince; src: url('fonts/Amenti-Thin.ttf');}
 		body{ font-family: Quince; font-weight: lighter; margin:0;}
 		h1{ color: var(--tinto); font-size: 2em; padding: 2% 0;}
+		h2{ color: white; font-size: 2em; padding: 2% 0;}
 		p{ padding: 3% 0;}
+        .precio{ font-size: 2em; font-weight: bold;}
 		:root{
 			--navgrid: 4; 
 			--navgridend: calc(var(--navgrid) + 1);
@@ -57,7 +59,7 @@
 			margin: 15px 0;
 		}
 		.advertise div{ padding: 5px;}
-		.advertise img{ border-radius: 15px; }
+		.advertise img{ border-radius: 15px; max-height: 300px; }
 		.bottom{ 
 			display: grid;
 			grid-template-columns: repeat(var(--bottomgrid), auto);
@@ -102,6 +104,7 @@
 	            grid-template-columns: 1fr; 
 	            grid-column: 1/2;
 	        }
+            .advertise img{ border-radius: 15px; max-height: 150px; }
 		}
 
 	</style>
@@ -124,7 +127,7 @@
 		</div>
 
 		<div class="advertise">
-			<div> <img src="red.jpg" alt="" height="200px"/></div>
+			<div> <img src="red.jpg" alt=""  /></div>
 			<div>
 				<h2>Elite</h2>
 				<p>Try our best wines delivered weekly</p>
@@ -133,11 +136,12 @@
 					<li>2 regular top class bottles</li>
 					<li>pairing suggestions</li>
 				</ul>
-				
+                <br>
+                <span class="precio">$30 </span>	USD/Month
 			</div>
 		</div>
 		<div class="advertise">
-			<div> <img src="Copas.jpg" alt="" height="200px?"/></div>
+			<div> <img src="Copas.jpg" alt="" /></div>
 			<div>
 				<h2>Connocieur</h2>
 				<p>Designed for connocieurs to explore new wines from around rhe globe</p>
@@ -146,13 +150,23 @@
 					<li>2 discoverer bottles</li>
 					<li>pairig suggestions</li>
 				</ul>
+                <br>
+                <span class="precio">$20</span>	USD/Month
 			</div>
 		</div>
 		<div class="advertise">
-			<div> <img src="Starter.jpg" alt="" height="200px"/></div>
+			<div> <img src="Starter.jpg" alt=""  /></div>
 			<div>
 				<h2>Enthusiast</h2>
-				<p>Try our best wines</p>
+				<p>For those who are new in the world of winee tasting, 
+                we deliver to you fine products from our fine selection of wines from 
+                around the globe.</p>
+                <ul>
+                    <li>2 fine bottles of excelent wine</li>
+                    <li>pairing suggestions</li>
+                </ul>
+                <br>
+                <span class="precio">$30 </span>	USD/Month
 			</div>
 		</div>
 		
