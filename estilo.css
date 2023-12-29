@@ -1,10 +1,13 @@
 *{ margin: 0; font-size: 18px;}
 @font-face{ font-family: Quince; src: url('fonts/Amenti-Thin.ttf');}
 body{ font-family: Quince; font-weight: lighter; margin:0;}
-h1{ color: var(--tinto); font-size: 2em; padding: 2% 0;}
-h2{ color: var(--tinto); font-size: 2em; padding: 2% 0;}
-p{ padding: 3% 0;}
-.precio{ font-size: 2em; font-weight: bold;}
+h1{ color: var(--tinto); font-size: 2em; }
+h2{ color: var(--tinto); font-size: 2em; }
+p{ padding: 3% 0; font-family: arial;}
+.precio{ 
+    font-size: 2em; 
+    font-weight: bold;
+ }
 :root{
     --navgrid: 4; 
     --navgridend: calc(var(--navgrid) + 1);
@@ -22,7 +25,7 @@ p{ padding: 3% 0;}
 .imgresponsive{ 
     width: 100%;
     object-fit: cover;
-    object-position: 20% 10%;
+    object-position: 30% 10%;
 }
 div{ box-sizing: border-box;}
 .nav{
@@ -34,7 +37,7 @@ div{ box-sizing: border-box;}
 }
 .content{ 
     display: grid; 
-    grid-template-columns: repeat(var(--contentgrid) auto);
+    grid-template-columns: repeat(var(--contentgrid), 1fr);
     width: 100%;		
     padding: 3%;
 }
@@ -50,14 +53,22 @@ div{ box-sizing: border-box;}
     color: white;
     margin: 15px 0;*/
     margin: 15px;
-    padding: 2em;
+    padding: 1em;
     border-radius: 15px;
     border: 1px solid gray;
     text-align: center;
     color: black;
+    position: relative;
 }
 .advertise div{ padding: 5px;}
+.precionum{
+    position: absolute; 
+    bottom:0; 
+    align-self:center;
+    transform: translateX( 100%); 
+}
 .advertise img{ border-radius: 15px; max-height: 250px; }
+.advertise ul{ list-style-type: none;} 
 .bottom{ 
     display: grid;
     grid-template-columns: repeat(var(--bottomgrid), auto);
@@ -97,10 +108,11 @@ a:active{ }
         background-color: var(--azul);
         padding: 10px 10px;
     }
+    .content{ grid-column: 1 / var(--contentgridend);}    
     .content-expand, .content-half1 , .content-half2, .bottom, .bottom-expand{ 
         display:grid; 
         grid-template-columns: 1fr; 
-        grid-column: 1/2;
+        grid-column: 1 / var(--contentgridend);
     }
     .advertise img{ border-radius: 15px; max-height: 150px; }
 }
