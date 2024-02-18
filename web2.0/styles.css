@@ -1,0 +1,188 @@
+:root{
+    --fontnav: 'Sarabun';
+    --subtitle:  'Barlow';
+    --packtitle:  'Tangerine';
+    --packdescription:  'Barlow';
+    --pricefont: 'Lora';
+
+    /* color */
+    --cremaclaro: #fef4e8;
+    --gris: #9b9298;
+    /* --verde: #a5aa5a;  */
+    --verde: #3E303E; 
+    --packdescriptioncolor: #958ea0;
+    /* --pricecolor: #ff4218; */
+    --pricecolor: #AC3939;
+
+    /* grid */
+    --navgrid: 3;
+    --contentgrid: 2;
+    --bottomgrid: 3;
+    --contentcollectiongrid: 3;
+    --canastacollectiongrid: 2;
+    --produuct2gridcolumns: 3;
+    --produuct2gridrows: 2;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cremaclaro);
+    font-size: 12px;
+
+img{ margin:0; }
+.imgresponsive{ 
+    width: 100%;
+    object-fit: cover;
+    object-position: 30% 70%;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.imgresponsivebottom{  object-position: 30% 10%;}
+h1{
+    /*font-family: 'Sarabun', sans-serif;*/
+    font-family: var(--fontnav);
+}
+h1.packtitle{
+  font-family: var(--packtitle); color:var(--verde); 
+  font-size:4em;
+}
+h1.pricecolor{ 
+  font-family: var(--pricecolor);
+  color:var(--pricecolor);
+  float: left;
+}
+h1.collection{ font-family: var(--pricefont);}
+p.pricecolor{ 
+  color: black; 
+  margin-top: 2em; 
+  margin-left: 2em;
+  float: left;
+} 
+
+/* contenedores */
+/* div, li{ border: 1px solid  black;} */
+.wrap{ padding: 0; }
+#navmenu{
+    display: grid;
+    grid-template-columns: repeat( var(--navgrid), [menuuno] 1fr [menudos] 1fr [menuimagen] auto);
+    list-style-type: none;
+    text-align:center;
+    padding:0;
+    font-size: 1.2em;
+    font-family: var(--subtitle);
+}
+.navmenu ul li{color:red }
+li.navmenu:nth-child(1), li.navmenu:nth-child(2){
+    margin-top: 75px;
+}
+li.navmenu:nth-child(3){
+
+}
+.navmenu p{
+}
+.subtitle{ font-family: var(--subtitle); color: var(--gris); font-size:1.5em;}
+.content{
+    margin: 3% 14%;
+    padding: 0%;
+    display: grid;
+    /* grid-template-columns: repeat( var(--contentgrid), auto); */
+}
+.content div{
+    font-family: var(--packdescription);
+    color: var(--packdescriptioncolor);
+    font-size:1.2em ;
+}
+.product{
+  margin: 1em;
+  display: grid;
+  /* grid-template-columns: repeat(3, auto); */
+  /* grid-template-rows: repeat(2, 100px 100px); */
+  grid-template-columns: repeat( var(--contentgrid), 300px auto);
+  /* border: 1px solid gray; */
+}
+.product img{
+  /* width: 350px; */
+  margin-top: 1.5em;
+  max-height: 300px;
+  padding: 1.5em;
+}
+
+
+
+.product2{
+  display: grid;
+  grid-template-columns: [product1] auto [product2] auto [product3] auto;
+  grid-template-rows: 320px auto 150px;
+}
+.product2 div{ margin-left: 2em;
+  /* border: 1px solid red; */
+  border-radius: 15px;
+}
+.product2 img{ text-align:center; height:280px; padding:1em;}
+
+
+
+.contentcollection{
+  display: grid;
+  grid-template-columns: repeat( var(--contentcollectiongrid), auto);
+}
+.contentcollection img{
+  height: 300px;
+}
+.wine {
+  font-family: var(--packdescription);
+  color: var(--packdescriptioncolor);
+  padding: 1em;
+  margin: 2em;
+  border-radius: 15px;
+}
+.wine h1, .canasta h1{ font-size: 1.2em; color: var(--verde)}
+
+.canastacollection{
+  display: grid;
+  grid-template-columns: repeat( var(--canastacollectiongrid), auto);
+}
+.canastacollection img{
+  height: 300px;
+}
+.bottom{
+    display: grid;
+    grid-template-columns: repeat(var(--bottomgrid), auto);
+    background-color: black;
+    color: white;
+    padding: 2% 5%; 
+}
+.imagen{ height: 100px}
+.bottom div{ margin:1em;}
+/* responsive */
+@media only screen and ( max-width: 600px){
+   .content{
+        margin: 0;
+        padding: 2%;
+        display: grid;
+        grid-template-columns: repeat(1. auto);
+   }
+   .content div { grid-column:1/2;} 
+   .product div { grid-column:1/2;}
+   .contentcollection div { grid-column:1/2;} 
+   .bottom{
+     display: grid;
+   }
+   .bottom div{
+     grid-column: 1 / var(--bottomgrid);
+   }
+}
+/* links */
+a { text-decoration:none;}
+a.nav:link, a.nav:visited { color: black}
+a.nav:hover { color: gray;}
+a.join:link, a.join:visited{
+  border: 1px solid var(--verde);
+  margin: 1em;
+  padding: 1em;
+  border-radius: 14px;
+  float: left;
+}
+a.join:hover{ color: gray;}
+a.bottom:visited{ color:whte}
+a.bottom:hover{ color: var(--gris); }
